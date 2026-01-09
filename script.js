@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -169,18 +169,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateNavbar() {
         const currentScroll = window.pageYOffset;
+        const shouldBeScrolled = currentScroll > 100;
 
-        if (currentScroll > 100) {
-            navbar.style.backgroundColor = 'rgba(245, 242, 237, 0.98)';
-            navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
-        } else {
-            navbar.style.backgroundColor = 'rgba(245, 242, 237, 0.95)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+        if (shouldBeScrolled !== isScrolledState) {
+            isScrolledState = shouldBeScrolled;
+            if (shouldBeScrolled) {
+                navbar.style.backgroundColor = 'rgba(245, 242, 237, 0.98)';
+                navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(245, 242, 237, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
         }
 
         lastScroll = currentScroll;
         ticking = false;
     }
+
+    // Track state to avoid redundant DOM writes
+    let isScrolledState = false;
 
     window.addEventListener('scroll', function () {
         if (!ticking) {

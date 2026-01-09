@@ -22,6 +22,13 @@ body {
     line-height: 1.6;
 }
 
+h1,
+h2,
+h3 {
+    font-size: 2em;
+    margin: 0;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -339,6 +346,11 @@ section h2 {
     transform: translateY(30px);
 }
 
+.ingredient-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .ingredient-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -376,6 +388,11 @@ section h2 {
     transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(30px);
+}
+
+.product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .product-card:hover {
@@ -572,7 +589,8 @@ footer {
 }
 
 .footer-logo {
-    height: 50px;
+    height: auto;
+    width: 187px;
     margin-bottom: 15px;
     filter: brightness(0) invert(1);
 }
