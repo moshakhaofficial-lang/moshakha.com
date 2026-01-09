@@ -141,14 +141,14 @@
     </style>
 
     <!-- Preconnect Critical Resources -->
-    <link rel="preconnect" href="https://moshakha.com">
-    <link rel="dns-prefetch" href="https://moshakha.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Fonts with display=optional to prevent CLS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Montserrat:wght@300;400;500&display=optional"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
         integrity="sha384-VDbnsk/qjpIVHPQMkJiROI+vW/7cw0k8TFYVLUabm7EWoLEDwcXh09XQ6gQ86Y0B" crossorigin="anonymous"
         defer></script>
@@ -241,7 +241,7 @@
                         <img src="images/ORAEback_opt.png"
                             srcset="images/ORAEback_600.webp 600w, images/ORAEback_opt.png 1200w"
                             sizes="(max-width: 768px) 100vw, 570px" alt="OraeSkin Story" loading="lazy" width="600"
-                            height="225" decoding="async">
+                            height="225" decoding="async" style="width: 100%; height: auto; aspect-ratio: 600/225;">
                     </div>
                 </div>
             </div>

@@ -216,6 +216,8 @@ h3 {
 /* Sections */
 section {
     padding: 100px 0;
+    scroll-margin-top: 90px;
+    /* Handle navbar offset natively */
 }
 
 section h2 {

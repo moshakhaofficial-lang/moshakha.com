@@ -30,9 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 90; // Account for fixed navbar
-                window.scrollTo({
-                    top: offsetTop,
+                target.scrollIntoView({
                     behavior: 'smooth'
                 });
             }
