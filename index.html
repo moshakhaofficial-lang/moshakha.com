@@ -121,10 +121,18 @@
         margin: 0 auto;
     }
     </style>
+    
+    <!-- Preconnect Critical Resources -->
+    <link rel="preconnect" href="https://moshakha.com">
+    <link rel="dns-prefetch" href="https://moshakha.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" integrity="sha384-rbsAfy5oEjddE7bJh6V0jCEX9H5k+4 crossorigin="anonymous" media="print" onload="this.media='all'">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" integrity="sha384-2BSCNkMJRluDjJ5QmU94QtDqddwOi" crossorigin="anonymous" defer></script>
+    
+    <!-- Defer Non-Critical CSS -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
     <header>
@@ -407,6 +415,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
