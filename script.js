@@ -159,9 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Observe elements for animation
     document.querySelectorAll('.ingredient-card, .product-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 
@@ -192,37 +189,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Luxury product data
-    const products = [
-        {
-            name: 'Opulent Glow Serum',
-            description: 'An indulgent 24K gold-infused serum delivering opulent nourishment and radiant luminosity.',
-            image: 'images/serum.jpg'
-        },
-        {
-            name: 'Radiant Renewal Moisturizer',
-            description: 'A rich, ageless formulation that deeply hydrates while revealing your most radiant complexion.',
-            image: 'images/moisturizer.jpg'
-        },
-        {
-            name: 'Enriched Ageless Cleanser',
-            description: 'A luxurious cleansing experience enriched with precious oils for timeless, pampered skin.',
-            image: 'images/cleanser.jpg'
-        }
-    ];
-
-    const productGrid = document.querySelector('.product-grid');
-
-    products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.classList.add('product-item');
-
-        productItem.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-        `;
-
-        productGrid.appendChild(productItem);
-    });
+    // Product cards are already hardcoded in HTML.
 });
